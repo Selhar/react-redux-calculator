@@ -1,0 +1,109 @@
+//custom normalize, global rules are in there
+@import "./helpers/normalize.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$board-height: 500px;
+$board-width: 400px;
+$display-height: 100px;
+$button-width: $board-width / 4;
+$button-height: round(($board-height - $display-height) / 5);
+
+html,
+body,
+#main {
+    height: 100%;
+}
+body{
+    background-color: #BCDB95;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#main {
+    height: $board-height;
+    width: $board-width;
+}
+
+.display {
+    background-color: #d7f2cb;
+    color: #4f2781;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: $display-height;
+    text-align: right;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.board{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 0;
+    margin: 0;
+    width: $button-width;
+    color: #BCDB95;
+    height: $button-height;
+    background-color: #43246a;
+    &:last-of-type{
+        width: $button-width * 2;
+    }
+    &:active{
+        background-color: #4f2781;
+    }
+}
+
+.calculator_value{
+    position: absolute;
+    font-size: 80px;
+    padding: 0 15px 0 15px;
+    right: 0;
+    transform-origin: right;
+    display: inline-block;
+}
+
+/**************
+     Footer
+***************/
+
+.contact {
+    text-align: center;
+}
+
+footer {
+    color: #43246a;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 2rem;
+    margin-top: 25px;
+}
+
+footer a {
+    margin: 15px;
+    color: #43246a;
+    text-decoration: none;
+}
+
+footer a:focus {
+    outline: none;
+}
+
+footer a:hover {
+    color: #4f2781;
+}
